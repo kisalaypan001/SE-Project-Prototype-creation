@@ -1,2 +1,1 @@
-# SE--Front-end-creation
-Trial for project
+# SE-Prototype-creation
