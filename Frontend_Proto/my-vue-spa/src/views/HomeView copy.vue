@@ -38,20 +38,20 @@
       <img src="@/Images/display5.png" alt="Image 5" />
     </div>
     <!-- Popup container -->
-    <div class="popup" id="aiPopup" v-if="showPopup">
-    <button class="close-btn" @click="togglePopup">&times;</button>
-    <img src="@/Images/robot.png" alt="AI Assistant">
-    <h3>Welcome!</h3>
-    <p>Hi there! I’m StudyBuddy! Your AI assistant. I am here to guide you.</p>
-    <div class="chat-container">
-      <div class="chat-box" v-for="(message, index) in chatMessages" :key="index">
-        <span :class="{'user-message': message.user, 'bot-message': !message.user}">{{ message.text }}</span>
+    <div class="popup" v-if="showPopup">
+      <button class="close-btn" @click="togglePopup">&times;</button>
+      <img src="@/Images/robot.png" alt="AI Assistant">
+      <h3>Welcome!</h3>
+      <p>Hi there! I’m StudyBuddy! Your AI assistant. I am here to guide you.</p>
+      <div class="chat-container">
+        <div class="chat-box" v-for="(message, index) in chatMessages" :key="index">
+          <span :class="{'user-message': message.user, 'bot-message': !message.user}">{{ message.text }}</span>
+        </div>
+        <input v-model="userInput" @keyup.enter="sendMessage" placeholder="Ask me anything..." />
+        <button @click="sendMessage">Send</button>
       </div>
-      <input v-model="userInput" @keyup.enter="sendMessage" placeholder="Ask me anything..." />
-      <button @click="sendMessage">Send</button>
     </div>
-  </div>
-  <button class="open-btn" @click="togglePopup">Chat with StudyBuddy</button>
+    <img src="@/Images/nav-assist.png" alt="AI Assistant" width="100px" @click="togglePopup" class="study-buddy-img" />
   </div>
 </template>
 
@@ -63,34 +63,35 @@ export default {
     Navbar,
   },
   mounted() {
-    this.startSlideshow();
-    // Show popup for new users
-    const popup = document.getElementById('aiPopup');
-    const closeBtn = document.getElementById('closePopup');
-
-    // Show popup after a slight delay
+    // Automatically show popup after 1 second
     setTimeout(() => {
-      popup.style.display = 'block';
-    }, 1000); // Show after 1 second
-
-    // Close popup on button click
-    closeBtn.addEventListener('click', () => {
-      popup.style.display = 'none';
-    });
-    
-    // Start the slideshow
-    this.startSlideshow();
+      this.showPopup = true;
+    }, 1000);
+  },
+  data() {
+    return {
+      showPopup: false,
+      userInput: '',
+      chatMessages: [
+        { text: "Hello! How can I assist you today?", user: false }
+      ]
+    };
   },
   methods: {
-    startSlideshow() {
-      const images = document.querySelectorAll('.slideshow-container img');
-      let currentIndex = 0;
-      setInterval(() => {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
-      }, 3000);
+    togglePopup() {
+      this.showPopup = !this.showPopup;
     },
+    sendMessage() {
+      if (this.userInput.trim() === '') return;
+      this.chatMessages.push({ text: this.userInput, user: true });
+      this.getBotResponse(this.userInput);
+      this.userInput = '';
+    },
+    getBotResponse(input) {
+      setTimeout(() => {
+        this.chatMessages.push({ text: `You asked: ${input}`, user: false });
+      }, 1000);
+    }
   },
 };
 </script>

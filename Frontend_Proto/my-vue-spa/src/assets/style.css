@@ -458,27 +458,33 @@
         text-align: left;
       }
   
-    .sidebar {
-      width: 200px;
-      background-color: #f8f4f4;
-      color: #fff;
-      position: fixed;
-      top: 75px;
-      bottom: 0;
-      padding: 20px;
-      padding-left: 0px;
-      text-align: left;
-      border-right:1px solid (82, 82, 82);
+      .sidebar {
+        width: 60px;
+        background-color: #222;
+        position: fixed;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
     }
-    
-    .sidebar img {
-      margin-top: 30px;
-      margin-left: 0px;
-      padding: 0;
+    .sidebar a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        display: block;
+        transition: background 0.3s;
+    }
+    .sidebar a img {
+        width: 30px;
+        height: 30px;
+    }
+    .sidebar a:hover {
+        background-color: #444;
     }
     
     .content {
-      margin-left: 220px;
+      margin-left: 50px;
       padding: 20px;
       height: 550px;
       margin-top: 75px;
@@ -581,6 +587,10 @@
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       overflow-y: auto;
       text-align: left;
+      margin-left: 50px;
+    }
+    .selected-icon {
+      background-color: #f0f0f0;
     }
     .sidebar-python h2 {
       font-size: 18px;
@@ -697,7 +707,7 @@
       box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content:flex-start;
     }
     .search-ai {
       margin-bottom: 20px;
@@ -858,3 +868,364 @@
     border-radius: 10px;
     cursor: pointer;
   }
+
+
+  .sidebar {
+    width: 50px;
+    float: left;
+  }
+  
+  .image-sidebar img {
+    width: 50px;
+  }
+  
+  .main-content_1 {
+    margin-left: 50px;
+    padding: 20px;
+    margin-top: 60px;
+    background-color: #f0efef;
+    height: 100%;
+  }
+  .sub-content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 500px;
+  }
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .latest-updates {
+    margin-bottom: 20px;
+    width: 32%;
+    background-color: #ffffff;
+  }
+  
+  .latest-updates ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .latest-updates li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .content_1 {
+    margin-bottom: 20px;
+    display: block;
+    width: 32%;
+    background-color: #ffffff;
+
+  }
+  
+  .course-card_1 {
+    padding: 20px;
+    background-color: #fff;
+    background-image: url('@/Images/bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 300px;
+    height: 100px;
+    margin-left: 30px;
+    color: #ffffff;
+  }
+  
+  .peer-study-group {
+    margin-bottom: 20px;
+    width: 32%;
+    background-color: #ffffff;
+  }
+  
+  .peer-study-group ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .peer-study-group li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .footer {
+    clear: both;
+    text-align: center;
+    padding: 0px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    align-content: center;
+  }
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.chat-box {
+  padding: 8px;
+  border-radius: 5px;
+}
+.user-message {
+  background: #d1e7fd;
+  align-self: flex-end;
+}
+.bot-message {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+.open-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.popup_1 {
+  position: absolute;
+  width: 90%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-top: 10px;
+  z-index: 1000;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.chat-container_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow-y: auto;
+}
+.popup_1 img {
+  width: 150px; /* Robot image size */
+  height: auto;
+  margin-bottom: 10px;
+  display: flex;
+  align-self:center ;
+}
+.popup_1 h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #333;
+}
+.popup_1 p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+.close-btn_1 {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+}
+.chat-container_1 {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  padding: 10px;
+  border: 1px solid #df9066;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  position: relative;
+}
+.chat-box_1 {
+  margin: 10px 0;
+  max-width: 100%;
+  word-wrap: break-word;
+  align-self: flex-end;
+  text-align: right;
+}
+.chat-box_2 {
+  margin: 10px 0;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+.user-message_1 {
+  align-self: flex-end;
+  background-color: #d1e7ff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 0;
+  font-size: small;
+}
+.bot-message_1 {
+  align-self: flex-start;
+  background-color: #f0e5e5;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 20%;
+  font-size:small;
+  display: flex;
+}
+.peer-group-img {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.peer-study-group {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px; 
+}
+.study-buddy-img {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.prog-assistant-container {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.overlay_1 {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  margin-top: 150px;
+}
+.popup_2 {
+  position: relative;
+  width: 90%;
+  max-width: 800px; /* Prevents it from getting too wide on large screens */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 10px;
+  z-index: 1000;
+}
+.popup_3 {
+  position: relative;
+  width: 90%;
+  max-width: 30%; /* Prevents it from getting too wide on large screens */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 10px;
+  z-index: 1000;
+}
+.study-mat {
+  font-size: 14px;
+  padding: 10px;
+  color: #333;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background-color: #cbdaed;
+  text-align: center;
+
+}
+.sidebar-grades {
+  min-width: 300px;
+  background: #ffffff;
+  padding: 20px;
+  min-height: 800px;
+}
+.grade-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.content-grades {
+  flex: 1;
+  padding: 20px;
+  background: #f9f9f9;
+  margin-bottom: 0px;
+  min-height: 800px;
+}
+.grade-summary {
+  margin-top: 20px;
+}
+progress {
+  width: 100%;
+  height: 20px;
+}
+.main-container-grades {
+  display: flex;
+  height: 100%;
+}

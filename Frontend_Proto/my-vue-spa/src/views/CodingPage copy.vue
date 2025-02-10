@@ -1,15 +1,10 @@
 <template>
       <div class="main-container-python">
         <!-- Sidebar -->
-      <div class="sidebar">
-        <a href="/python" class="selected-icon"><img src="@/Images/sidebar-modules-selected.svg" alt="Icon 1"></a>
-        <a href="python-grades"><img src="@/Images/sidebar-grades.svg" alt="Icon 2"></a>
-
-    </div>
         <div class="sidebar-python">
           <h2>Modules</h2>
           <ul>
-            <li class="module">
+            <li class="module active">
               <span>Course Introduction</span>
             </li>
             <li class="module">
@@ -19,10 +14,8 @@
               <span>Week 1</span>
               <ul class="sub-modules">
                 <li class="sub-module">
-                  <router-link to="/python" class="module">
                   <span>1.1 Introduction to Replit</span>
                   <span class="tag">Video</span>
-                  </router-link>
                 </li>
                 <li class="sub-module">
                   <span>1.2 More on Replit, print and Common Mistakes</span>
@@ -71,16 +64,17 @@
   
         <!-- Right Panel -->
         <div class="right-panel">
-      <img src="@/Images/prog-assistant.png" alt="AI Assistant" width="150px" @click="togglePeerRecommendations" class="peer-group-img" />
-      <div class="prog-assistant-container" v-if="showPeerRecommendations">
-        <h2>Programming Assistant</h2>
-        <ul>
-          <li>Line 1: Correct the code</li>
-          <li>Line 2: Correct the code</li>
-          <li>Peer 8: Wrong indentation</li>
-        </ul>
-      </div>
-      </div>
+          <div class="search-ai">
+            <img src="@/Images/robot.png" alt="AI Assistant" />
+            <p>AI assistant StudyBuddy guides</p>
+          </div>
+          <div class="transcript">
+            <h3>AI assistant says-</h3>
+            <p>
+              Use while loop for solving the problem...
+            </p>
+          </div>
+        </div>
       </div>
   </template>
   
@@ -92,8 +86,7 @@
         actualOutput: "",
         resultMessage: "",
         resultColor: "black",
-        searchQuery: "",
-        showPeerRecommendations: false
+        searchQuery: ""
       };
     },
     methods: {
@@ -101,7 +94,7 @@
         const correctOutput = "1\n2\n3\n4\n5\n"; // Expected output format
   
         // Simulate the expected logic in the user's code
-        let isCorrect = this.userCode.includes("print(i)") &&
+        let isCorrect = this.userCode.includes("print") &&
                         this.userCode.includes("while") &&
                         this.userCode.includes("i=1") &&
                         this.userCode.includes("i<6") &&
@@ -120,11 +113,6 @@
           this.resultColor = "red";
         }
       },
-
-      togglePeerRecommendations() {
-      this.showPeerRecommendations = !this.showPeerRecommendations;
-      },
-
       searchAI() {
         alert("Searching AI for: " + this.searchQuery);
       },

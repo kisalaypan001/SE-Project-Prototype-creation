@@ -51,7 +51,7 @@
         <button @click="sendMessage">Send</button>
       </div>
     </div>
-    <button class="open-btn" @click="togglePopup">Chat with StudyBuddy</button>
+    <img src="@/Images/nav-assist.png" alt="AI Assistant" width="100px" @click="togglePopup" class="study-buddy-img" />
   </div>
 </template>
 

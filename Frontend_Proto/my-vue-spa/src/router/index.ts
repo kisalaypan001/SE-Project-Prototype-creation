@@ -8,12 +8,6 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // Lazy-load the About view when this route is visited
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
     path: '/loginpage',
     name: 'LoginPage', // Updated name to match the route naming convention
     component: () => import('../views/LoginPage.vue') // Dynamically import the LoginPage component
@@ -38,6 +32,16 @@ const routes: Array<RouteRecordRaw> = [
     name: 'SignUpPage', // Updated name to match the route naming convention
     component: () => import('../views/SignUpPage.vue') // Dynamically import the LoginPage component
   },
+  {
+    path: '/student-dashboard',
+    name: 'StudentDashboard', // Updated name to match the route naming convention
+    component: () => import('../views/StudentDashboard.vue') // Dynamically import the StudentDashboard component
+  },
+  {
+    path: '/python-grades',
+    name: 'PythonGrades', // Updated name to match the route naming convention
+    component: () => import('../views/PythonGrades.vue') // Dynamically import the LoginPage component
+  }
 ]
 
 const router = createRouter({

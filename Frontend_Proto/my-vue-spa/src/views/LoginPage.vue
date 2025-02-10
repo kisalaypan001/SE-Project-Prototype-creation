@@ -67,7 +67,7 @@ export default {
     // Perform your authentication logic here (e.g., API request to check credentials)
     // If successful, navigate to the CoursesPage
 
-    this.$router.push({ name: 'CoursesPage' }); // Navigates to the CoursesPage route
+    this.$router.push({ name: 'StudentDashboard' }); // Navigates to the CoursesPage route
   }
   },
 };

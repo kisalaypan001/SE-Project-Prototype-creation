@@ -5,8 +5,8 @@
       <div class="main-container-python">
               <!-- Sidebar -->
       <div class="sidebar">
-        <a href="python" class="selected-icon"><img src="@/Images/sidebar-modules-selected.svg" alt="Modules"></a>
-        <a href="/python-grades"><img src="@/Images/sidebar-grades.svg" alt="Icon 2"></a>
+        <a href="#" class="selected-icon"><img src="@/Images/sidebar-modules-selected.svg" alt="Icon 1"></a>
+        <a href="#"><img src="@/Images/sidebar-grades.svg" alt="Icon 2"></a>
     </div>
         <!-- Modules -->
         <div class="sidebar-python">
@@ -92,29 +92,10 @@
           </div>
         </div>
              <!-- Popup -->
-      <div v-if="isPopupOpen" class="overlay">
+             <div v-if="isPopupOpen" class="overlay">
       <div class="popup_2">
         <button @click="toggleStudyRecommendations" class="close-btn_1">✖</button>
         <h2 class="text-xl font-semibold mb-4">Study Material Recommendation</h2>
-        <div class="search-bar">
-        <input type="text" v-model="userInput" placeholder="Search study materials..." @click="showPopup = true" @keyup.enter="sendMessage" />
-      
-      <!-- Chatbot Popup below Search Bar -->
-        <div class="chat-container_2">
-        <h3>Welcome!</h3>
-        <p>Hi there! I’m StudyBuddy! Your AI assistant. I am here to guide you.</p>
-        <img src="@/Images/robot.png" width="100px" alt="AI Assistant">
-        <div v-for="(message, index) in chatMessages" :key="index">
-  <div v-if="message.user" class="chat-box_1">
-    <span class="user-message_1">{{ message.text }}</span>
-  </div>
-  <div v-else class="chat-box_2">
-    <span class="bot-message_1">{{ message.text }}</span>
-  </div>
-</div>
-</div>
-
-      </div>
         <p>Here you can display recommended study materials...</p>
       </div>
     </div>
@@ -126,10 +107,7 @@
     data() {
       return {
         query: '', // For binding input with the search functionality
-        isPopupOpen: false,
-        userInput: '',
-        chatMessages: [],
-        showPopup: false,
+        isPopupOpen: false
       };
     },
     methods: {
@@ -144,21 +122,7 @@
       },
       toggleStudyRecommendations() {
       this.isPopupOpen = !this.isPopupOpen;
-      },
-      togglePopup() {
-      this.showPopup = !this.showPopup;
-    },
-    sendMessage() {
-      if (this.userInput.trim() === '') return;
-      this.chatMessages.push({ text: this.userInput, user: true });
-      this.getBotResponse(this.userInput);
-      this.userInput = '';
-    },
-    getBotResponse(input) {
-      setTimeout(() => {
-        this.chatMessages.push({ text: `You asked: ${input}`, user: false });
-      }, 1000);
-    },
+      }
     },
   };
   </script>
