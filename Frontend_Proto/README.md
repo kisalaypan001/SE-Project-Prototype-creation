@@ -20,10 +20,10 @@
 ## Sign-In Functionality
 
 ### Instructor Login
-- **Email:** `instructor@iitm.study.ds.in`
+- **Email:** `instructor@iitm.com`
 - **Password:** Can be anything except blank
 
 ### Student Login
-- **Email:** Any valid email ID
+- **Email:** Any valid email ID(student@iitm.com)
 - **Password:** Cannot be blank
 
