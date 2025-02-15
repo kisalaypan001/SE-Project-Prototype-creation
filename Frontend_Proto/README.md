@@ -14,7 +14,7 @@
 
 2. To run the local development server:
    ```sh
-   npm run dev
+   npm run serve
    
 
 ## Sign-In Functionality
