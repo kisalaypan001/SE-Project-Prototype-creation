@@ -3,17 +3,6 @@
 ## Milestone 3 Version
 
 ## Project Setup
-
-## Sign-In Functionality
-
-### Instructor Login
-- **Email:** `instructor@iitm.study.ds.in`
-- **Password:** Can be anything except blank
-
-### Student Login
-- **Email:** Any valid email ID
-- **Password:** Cannot be blank
-
 ## To start the local server using this source code, run the following two commands:
 
 1. To install the node modules:
@@ -27,3 +16,14 @@
    ```sh
    npm run dev
    
+
+## Sign-In Functionality
+
+### Instructor Login
+- **Email:** `instructor@iitm.study.ds.in`
+- **Password:** Can be anything except blank
+
+### Student Login
+- **Email:** Any valid email ID
+- **Password:** Cannot be blank
+
