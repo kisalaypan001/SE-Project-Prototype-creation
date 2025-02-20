@@ -5,14 +5,19 @@
 ## Project Setup
 ## To start the local server using this source code, run the following two commands:
 
-1. To install the node modules:
+1. To open relevant folder:
+   ```sh
+   cd my-vue-spa
+   ```
+
+2. To install the node modules:
    ```sh
    npm install
    ```
 
 ### Compile and Hot-Reload for Development
 
-2. To run the local development server:
+3. To run the local development server:
    ```sh
    npm run serve
    
@@ -26,4 +31,4 @@
 ### Student Login
 - **Email:** Any valid email ID(student@iitm.com)
 - **Password:** Cannot be blank
-
+# SE-Prototype-creation
